@@ -14,7 +14,7 @@
         <button id="en-btn" class="lang-btn">English</button>
     </div>
 
-    <!-- 顶部简约渐变背景（无个人头像） -->
+    <!-- 顶部渐变背景（无头像） -->
     <section class="banner-bg">
         <div class="banner-content">
             <h1 class="cn name-title">王琪翔</h1>
@@ -25,10 +25,13 @@
     </section>
 
     <div class="container">
-        <!-- 基本信息 -->
+        <!-- 基本信息（右上角照片） -->
         <section class="basic-info card">
-            <h2 class="cn section-title">基本信息</h2>
-            <h2 class="en section-title">Basic Information</h2>
+            <div class="basic-header">
+                <h2 class="cn section-title">基本信息</h2>
+                <h2 class="en section-title">Basic Information</h2>
+                <img src="avatar.jpg" class="info-avatar" alt="个人照片">
+            </div>
             <div class="info-content">
                 <p><span class="cn">姓名：</span><span class="en">Name：</span>王琪翔</p>
                 <p><span class="cn">民族：</span><span class="en">Ethnicity：</span>Han</p>
@@ -44,18 +47,12 @@
             </div>
         </section>
 
-        <!-- 个人简介（个人照片放在此处） -->
+        <!-- 个人简介 -->
         <section class="profile card">
             <h2 class="cn section-title">个人简介</h2>
             <h2 class="en section-title">Personal Profile</h2>
-            <div class="profile-wrapper">
-                <!-- 个人照片（圆形） -->
-                <img src="avatar.jpg" alt="王琪翔照片" class="profile-avatar">
-                <div class="profile-text">
-                    <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
-                    <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
-                </div>
-            </div>
+            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
+            <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
         </section>
 
         <!-- 专业技能 -->
@@ -78,7 +75,7 @@
             </div>
         </section>
 
-        <!-- 教育经历（完整课程） -->
+        <!-- 教育经历 -->
         <section class="education card">
             <h2 class="cn section-title">教育经历</h2>
             <h2 class="en section-title">Educational Experience</h2>
@@ -168,19 +165,26 @@
         </section>
     </div>
 
-    <!-- 中英切换JS -->
+    <!-- 修复后：默认纯中文显示 JS -->
     <script>
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
+        
+        // 默认显示中文，隐藏英文（修复错乱核心）
+        cnElements.forEach(el => el.style.display = 'inline');
         enElements.forEach(el => el.style.display = 'none');
+        
+        // 中文切换
         cnBtn.addEventListener('click', () => {
             cnBtn.classList.add('active');
             enBtn.classList.remove('active');
             cnElements.forEach(el => el.style.display = 'inline');
             enElements.forEach(el => el.style.display = 'none');
         });
+        
+        // 英文切换
         enBtn.addEventListener('click', () => {
             enBtn.classList.add('active');
             cnBtn.classList.remove('active');
