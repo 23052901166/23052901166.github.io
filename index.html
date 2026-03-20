@@ -25,29 +25,31 @@
     </section>
 
     <div class="container">
-        <!-- 基本信息（右上角照片） -->
+        <!-- 基本信息（右上角放小头像） -->
         <section class="basic-info card">
             <div class="basic-header">
-                <h2 class="cn section-title">基本信息</h2>
-                <h2 class="en section-title">Basic Information</h2>
+                <div>
+                    <h2 class="cn section-title">基本信息</h2>
+                    <h2 class="en section-title">Basic Information</h2>
+                </div>
                 <img src="avatar.jpg" class="info-avatar" alt="个人照片">
             </div>
             <div class="info-content">
                 <p><span class="cn">姓名：</span><span class="en">Name：</span>王琪翔</p>
-                <p><span class="cn">民族：</span><span class="en">Ethnicity：</span>Han</p>
-                <p><span class="cn">出生年月：</span><span class="en">Date of Birth：</span>May 03, 2005</p>
+                <p><span class="cn">民族：</span><span class="en">Ethnicity：</span>汉</p>
+                <p><span class="cn">出生年月：</span><span class="en">Date of Birth：</span>2005.05.03</p>
                 <p><span class="cn">身高：</span><span class="en">Height：</span>183cm</p>
-                <p><span class="cn">政治面貌：</span><span class="en">Political Status：</span>Probationary Member of the Communist Party of China</p>
-                <p><span class="cn">学校/专业：</span><span class="en">University/Major：</span>East China University of Political Science and Law, Finance (Undergraduate)</p>
-                <p><span class="cn">学历：</span><span class="en">Educational Background：</span>Bachelor's Degree</p>
-                <p><span class="cn">研究/职业方向：</span><span class="en">Research/Career Direction：</span>Finance & Law Interdisciplinary Field, Financial Data Analysis, Law and Economics</p>
+                <p><span class="cn">政治面貌：</span><span class="en">Political Status：</span>中共预备党员</p>
+                <p><span class="cn">学校/专业：</span><span class="en">University/Major：</span>华东政法大学 金融学（本科）</p>
+                <p><span class="cn">学历：</span><span class="en">Educational Background：</span>本科</p>
+                <p><span class="cn">研究/职业方向：</span><span class="en">Research/Career Direction：</span>金融与法律交叉领域、金融数据分析、法经济学</p>
                 <p><span class="cn">联系电话：</span><span class="en">Phone Number：</span>13703440757</p>
                 <p><span class="cn">电子邮箱：</span><span class="en">E-mail：</span><i class="fas fa-envelope"></i> wqx050309@163.com</p>
-                <p><span class="cn">居住地址：</span><span class="en">Residential Address：</span>No. 555 Longyuan Road, Songjiang District, Shanghai</p>
+                <p><span class="cn">居住地址：</span><span class="en">Residential Address：</span>上海松江区龙源路555号</p>
             </div>
         </section>
 
-        <!-- 个人简介 -->
+        <!-- 个人简介（无照片） -->
         <section class="profile card">
             <h2 class="cn section-title">个人简介</h2>
             <h2 class="en section-title">Personal Profile</h2>
@@ -172,11 +174,11 @@
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
         
-        // 默认显示中文，隐藏英文（修复错乱核心）
+        // 初始化：默认显示中文，隐藏英文
         cnElements.forEach(el => el.style.display = 'inline');
         enElements.forEach(el => el.style.display = 'none');
         
-        // 中文切换
+        // 中文按钮点击：切换为全中文
         cnBtn.addEventListener('click', () => {
             cnBtn.classList.add('active');
             enBtn.classList.remove('active');
@@ -184,7 +186,7 @@
             enElements.forEach(el => el.style.display = 'none');
         });
         
-        // 英文切换
+        // 英文按钮点击：切换为全英文
         enBtn.addEventListener('click', () => {
             enBtn.classList.add('active');
             cnBtn.classList.remove('active');
