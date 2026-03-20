@@ -3,196 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王琪翔 - 个人主页</title>
+    <title>个人简历</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 语言切换按钮 -->
     <div class="lang-switch">
-        <button id="cn-btn" class="lang-btn active">中文</button>
-        <button id="en-btn" class="lang-btn">English</button>
+        <button id="cn-btn">中文</button>
+        <button id="en-btn">English</button>
     </div>
 
-    <!-- 顶部渐变背景（无头像） -->
-    <section class="banner-bg">
-        <div class="banner-content">
-            <h1 class="cn name-title">王琪翔</h1>
-            <h1 class="en name-title">Qixiang Wang</h1>
-            <p class="cn subtitle">金融+法律交叉领域 | 数据分析爱好者</p>
-            <p class="en subtitle">Finance & Law Interdisciplinary Field | Data Analysis Enthusiast</p>
-        </div>
-    </section>
+    <!-- 顶部标题 -->
+    <div class="banner">
+        <h1 class="cn">个人简历</h1>
+        <h1 class="en">Personal Resume</h1>
+    </div>
 
     <div class="container">
-        <!-- 基本信息（右上角放小头像） -->
-        <section class="basic-info card">
-            <div class="basic-header">
-                <div>
-                    <h2 class="cn section-title">基本信息</h2>
-                    <h2 class="en section-title">Basic Information</h2>
-                </div>
-                <img src="avatar.jpg" class="info-avatar" alt="个人照片">
+        <!-- 基本信息（带60px头像） -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="cn">基本信息</h2>
+                <h2 class="en">Basic Information</h2>
+                <img src="avatar.jpg" class="avatar" alt="头像">
             </div>
-            <div class="info-content">
-                <p><span class="cn">姓名：</span><span class="en">Name：</span>王琪翔</p>
-                <p><span class="cn">民族：</span><span class="en">Ethnicity：</span>汉</p>
-                <p><span class="cn">出生年月：</span><span class="en">Date of Birth：</span>2005.05.03</p>
-                <p><span class="cn">身高：</span><span class="en">Height：</span>183cm</p>
-                <p><span class="cn">政治面貌：</span><span class="en">Political Status：</span>中共预备党员</p>
-                <p><span class="cn">学校/专业：</span><span class="en">University/Major：</span>华东政法大学 金融学（本科）</p>
-                <p><span class="cn">学历：</span><span class="en">Educational Background：</span>本科</p>
-                <p><span class="cn">研究/职业方向：</span><span class="en">Research/Career Direction：</span>金融与法律交叉领域、金融数据分析、法经济学</p>
-                <p><span class="cn">联系电话：</span><span class="en">Phone Number：</span>13703440757</p>
-                <p><span class="cn">电子邮箱：</span><span class="en">E-mail：</span><i class="fas fa-envelope"></i> wqx050309@163.com</p>
-                <p><span class="cn">居住地址：</span><span class="en">Residential Address：</span>上海松江区龙源路555号</p>
+            <div class="card-body">
+                <p class="cn"><span>姓名：</span>XXX</p>
+                <p class="en"><span>Name：</span>XXX</p>
+                <p class="cn"><span>性别：</span>男</p>
+                <p class="en"><span>Gender：</span>Male</p>
+                <p class="cn"><span>年龄：</span>XX</p>
+                <p class="en"><span>Age：</span>XX</p>
+                <p class="cn"><span>电话：</span>138XXXX1234</p>
+                <p class="en"><span>Phone：</span>138XXXX1234</p>
+                <p class="cn"><span>邮箱：</span>xxx@163.com</p>
+                <p class="en"><span>Email：</span>xxx@163.com</p>
             </div>
-        </section>
+        </div>
 
-        <!-- 个人简介（无照片） -->
-        <section class="profile card">
-            <h2 class="cn section-title">个人简介</h2>
-            <h2 class="en section-title">Personal Profile</h2>
-            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
-            <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
-        </section>
-
-        <!-- 专业技能 -->
-        <section class="skills card">
-            <h2 class="cn section-title">技能证书</h2>
-            <h2 class="en section-title">Skills & Certificates</h2>
-            <div class="skill-list">
-                <div class="skill-item cn">Python、Stata、Matlab金融编程</div>
-                <div class="skill-item en">Python, Stata, Matlab Financial Programming</div>
-                <div class="skill-item cn">上海市计算机二级、Office/WPS全系列</div>
-                <div class="skill-item en">Shanghai Computer Level 2, Office/WPS Full Series</div>
-                <div class="skill-item cn">DW、Photoshop设计与应用</div>
-                <div class="skill-item en">DW, Photoshop Design and Application</div>
-                <div class="skill-item cn">大学英语四六级（熟练读写译）</div>
-                <div class="skill-item en">CET-4 & CET-6 (Fluent in Reading, Writing and Translation)</div>
-                <div class="skill-item cn">C2机动车驾驶证</div>
-                <div class="skill-item en">C2 Motor Vehicle Driving License</div>
-                <div class="skill-item cn">法律文书写作、卷宗整理实务</div>
-                <div class="skill-item en">Legal Document Writing, File Compilation Practice</div>
-            </div>
-        </section>
-
-        <!-- 教育经历 -->
-        <section class="education card">
-            <h2 class="cn section-title">教育经历</h2>
-            <h2 class="en section-title">Educational Experience</h2>
-            <div class="edu-item">
-                <p class="time cn">2023年9月-2027年7月 | 华东政法大学 | 金融学 | 本科</p>
-                <p class="time en">September 2023 - July 2027 | East China University of Political Science and Law | Finance | Bachelor's Degree</p>
-            </div>
-            <div class="courses">
-                <h3 class="cn">主修金融核心课程</h3>
-                <h3 class="en">Core Finance Major Courses</h3>
-                <p class="cn">高等数学一、高等数学二、线性代数、微观经济学、概率论与数理统计、金融学、宏观经济学、政治经济学、财政学、会计学、统计学、金融机构与金融市场、法经济学、Matlab金融编程、公司金融</p>
-                <p class="en">Advanced Mathematics 1, Advanced Mathematics 2, Linear Algebra, Microeconomics, Probability Theory and Mathematical Statistics, Finance, Macroeconomics, Political Economy, Public Finance, Accounting, Statistics, Financial Institutions and Financial Markets, Law and Economics, Matlab Financial Programming, Corporate Finance</p>
-            </div>
-            <div class="courses">
-                <h3 class="cn">核心法学课程</h3>
-                <h3 class="en">Core Law Courses</h3>
-                <p class="cn">法理学、宪法学、民法学、刑法学、民事诉讼法学、刑事诉讼法学、经济法学、金融法学、知识产权法学、国际贸易法、国际商法、国际商事仲裁、纪检监察理论与实务、法律文书写作</p>
-                <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
-            </div>
-        </section>
-
-        <!-- 实践经历 -->
-        <section class="experience card">
-            <h2 class="cn section-title">实践经历</h2>
-            <h2 class="en section-title">Practical Experience</h2>
-            <h3 class="cn">实习经历</h3>
-            <h3 class="en">Internship Experience</h3>
-            <div class="exp-item">
-                <p class="time cn">2024年11月-2025年1月 | 漯河市召陵区人民法院 | 法官助理实习生</p>
-                <p class="time en">November 2024 - January 2025 | Zhaoling District People's Court of Luohe City | Judge Assistant Intern</p>
-                <p class="cn">负责案件信息整理、法律文件分类管理，与开庭当事人进行庭前沟通对接，协助法官完成案件梳理，并参与法院判决书等法律文书的撰写工作。</p>
-                <p class="en">Responsible for sorting out case information, classifying and managing legal documents, conducting pre-trial communication with parties in court, assisting judges in sorting out cases, and participating in the writing of legal documents such as court judgments.</p>
-            </div>
-            <div class="exp-item">
-                <p class="time cn">2025年8月-2025年9月 | 漯河市召陵区人民检察院 | 第一检察部 检察官助理</p>
-                <p class="time en">August 2025 - September 2025 | Zhaoling District People's Procuratorate of Luohe City | Procurator Assistant, First Procuratorate Department</p>
-                <p class="cn">负责刑事案件卷宗的整理、分类与归档，撰写案件审查报告，参与犯罪嫌疑人提审工作，协助检察官完成刑事案件的审查与实务处理。</p>
-                <p class="en">Responsible for sorting, classifying and filing criminal case files, writing case review reports, participating in the interrogation of criminal suspects, and assisting prosecutors in completing the review and practical handling of criminal cases.</p>
-            </div>
-            <h3 class="cn">组织经历</h3>
-            <h3 class="en">Organizational Experience</h3>
-            <div class="exp-item">
-                <p class="cn">2334、23012班 班委</p>
-                <p class="en">Class Committee Member, Class 2334 & 23012</p>
-                <p class="cn">参与班级重大活动的策划与组织实施，负责全班同学的学习资源收集、整理与上传下达，保障班级学习氛围建设。</p>
-                <p class="en">Participated in the planning and organization of major class activities, responsible for the collection, sorting and transmission of learning resources for all classmates, and guaranteed the construction of the class learning atmosphere.</p>
-            </div>
-            <div class="exp-item">
-                <p class="cn">校组织部、学术部 部员</p>
-                <p class="en">Member, University Organization Department & Academic Department</p>
-                <p class="cn">参与全院团学活动的策划与落地，负责各部门之间的沟通协调工作，保障团学活动的顺利开展。</p>
-                <p class="en">Participated in the planning and implementation of league and student activities of the whole college, responsible for the communication and coordination between various departments, and guaranteed the smooth development of league and student activities.</p>
-            </div>
-            <div class="exp-item">
-                <p class="cn">2435班 班导生</p>
-                <p class="en">Senior Tutor, Class 2435</p>
-                <p class="cn">负责新生入学的校园适应指导工作，为新生提供学业规划、校园生活等方面的答疑与帮助，协助新生快速融入大学生活。</p>
-                <p class="en">Responsible for the campus adaptation guidance of freshmen, providing answers and help for freshmen in academic planning, campus life and other aspects, and assisting freshmen to quickly integrate into university life.</p>
-            </div>
-        </section>
-
-        <!-- 学术项目 -->
-        <section class="academic card">
-            <h2 class="cn section-title">学术项目与竞赛经历</h2>
-            <h2 class="en section-title">Academic Projects & Competition Experience</h2>
-            <div class="academic-item">
-                <p class="cn">2024学年 | 合作完成《金融视角下的法价值平衡——以“大而不倒”为例》</p>
-                <p class="en">2024 Academic Year | Co-completed "The Balance of Legal Values from a Financial Perspective - Taking 'Too Big to Fail' as an Example"</p>
-            </div>
-            <div class="academic-item">
-                <p class="cn">2024学年 | 领导完成《为中医药行业发展注入金融活水》| 校级决赛 优胜奖</p>
-                <p class="en">2024 Academic Year | Led the completion of "Injecting Financial Vitality into the Development of Traditional Chinese Medicine Industry" | Merit Award, University-level Final</p>
-            </div>
-            <div class="academic-item">
-                <p class="cn">2024学年 | 领导完成《法尺量利——AI代写的法商璧合及责利同构分析》| 全国法商案例分析大赛 全国决赛</p>
-                <p class="en">2024 Academic Year | Led the completion of "Measuring Profits by Legal Rules - The Integration of Law and Business and the Isomorphism of Responsibility and Profit in AI Writing" | National Final, National Law and Business Case Analysis Competition</p>
-            </div>
-            <div class="academic-item">
-                <p class="cn">2025学年 | 完成学年论文《上证指数波动与收益关系研究——基于GARCH族模型的实证分析》</p>
-                <p class="en">2025 Academic Year | Completed Academic Year Thesis "A Study on the Relationship between the Fluctuation and Return of the Shanghai Composite Index - An Empirical Analysis Based on GARCH Model Family"</p>
-            </div>
-        </section>
-
-        <!-- 更新日期 -->
-        <section class="update-date">
-            <p><span class="cn">最后更新日期：2026年03月20日</span><span class="en">Last Updated：March 20, 2026</span></p>
-        </section>
+        <!-- 个人简介 -->
+        <div class="card">
+            <h2 class="cn">个人简介</h2>
+            <h2 class="en">Personal Profile</h2>
+            <p class="cn">本人性格开朗，工作认真负责，具备良好的沟通能力和团队协作精神，热爱学习，积极进取。</p>
+            <p class="en">I am cheerful, serious and responsible in work, with good communication skills and team spirit, love learning and be proactive.</p>
+        </div>
     </div>
 
-    <!-- 修复后：默认纯中文显示 JS -->
+    <!-- 核心：纯中英文切换JS -->
     <script>
+        // 获取元素
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
-        const cnElements = document.querySelectorAll('.cn');
-        const enElements = document.querySelectorAll('.en');
-        
-        // 初始化：默认显示中文，隐藏英文
-        cnElements.forEach(el => el.style.display = 'inline');
-        enElements.forEach(el => el.style.display = 'none');
-        
-        // 中文按钮点击：切换为全中文
-        cnBtn.addEventListener('click', () => {
-            cnBtn.classList.add('active');
-            enBtn.classList.remove('active');
-            cnElements.forEach(el => el.style.display = 'inline');
-            enElements.forEach(el => el.style.display = 'none');
-        });
-        
-        // 英文按钮点击：切换为全英文
-        enBtn.addEventListener('click', () => {
-            enBtn.classList.add('active');
-            cnBtn.classList.remove('active');
-            enElements.forEach(el => el.style.display = 'inline');
-            cnElements.forEach(el => el.style.display = 'none');
-        });
+        const cnTexts = document.querySelectorAll('.cn');
+        const enTexts = document.querySelectorAll('.en');
+
+        // 默认显示中文
+        showCN();
+
+        // 中文按钮
+        cnBtn.onclick = showCN;
+        // 英文按钮
+        enBtn.onclick = showEN;
+
+        // 纯中文显示
+        function showCN() {
+            cnTexts.forEach(item => item.style.display = 'block');
+            enTexts.forEach(item => item.style.display = 'none');
+            cnBtn.style.background = '#0066cc';
+            enBtn.style.background = '#ccc';
+        }
+
+        // 纯英文显示
+        function showEN() {
+            enTexts.forEach(item => item.style.display = 'block');
+            cnTexts.forEach(item => item.style.display = 'none');
+            enBtn.style.background = '#0066cc';
+            cnBtn.style.background = '#ccc';
+        }
     </script>
 </body>
 </html>
