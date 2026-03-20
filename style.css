@@ -144,3 +144,56 @@ p {
 .en {
     display: none;
 }
+
+/* ============== 全局点击交互效果 ============== */
+
+/* 1. 全局平滑滚动（点击锚点/按钮更丝滑） */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. 按钮点击反馈（语言切换按钮） */
+.lang-switch button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 3. 卡片点击涟漪效果（点击卡片时的水波纹反馈） */
+.card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(22, 93, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+.card:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* 4. 头像点击缩放反馈 */
+.info-avatar {
+    transition: transform 0.2s ease;
+}
+.info-avatar:active {
+    transform: scale(0.9);
+}
+
+/* 5. 技能标签点击微动效 */
+.skill-item {
+    transition: all 0.2s ease;
+}
+.skill-item:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(22, 93, 255, 0.3);
+}
