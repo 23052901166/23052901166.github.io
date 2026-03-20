@@ -197,3 +197,14 @@ html {
     transform: scale(0.95);
     box-shadow: 0 2px 8px rgba(22, 93, 255, 0.3);
 }
+/* 卡片左侧基础颜色条 */
+.card {
+    position: relative;
+    border-left: 6px solid #165DFF; /* 初始蓝色 */
+    transition: border-left-color 0.3s ease; /* 平滑过渡 */
+}
+
+/* 滚动到视图中时，左侧条变为橙色 */
+.card.active {
+    border-left-color: #FF7D00;
+}
