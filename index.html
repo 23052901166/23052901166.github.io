@@ -14,8 +14,8 @@
         <button id="en-btn" class="lang-btn">English</button>
     </div>
 
-    <!-- 顶部横幅头像 -->
-    <section class="banner-avatar">
+    <!-- 顶部简约渐变背景（无个人头像） -->
+    <section class="banner-bg">
         <div class="banner-content">
             <h1 class="cn name-title">王琪翔</h1>
             <h1 class="en name-title">Qixiang Wang</h1>
@@ -44,12 +44,18 @@
             </div>
         </section>
 
-        <!-- 个人简介 -->
+        <!-- 个人简介（个人照片放在此处） -->
         <section class="profile card">
             <h2 class="cn section-title">个人简介</h2>
             <h2 class="en section-title">Personal Profile</h2>
-            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
-            <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
+            <div class="profile-wrapper">
+                <!-- 个人照片（圆形） -->
+                <img src="avatar.jpg" alt="王琪翔照片" class="profile-avatar">
+                <div class="profile-text">
+                    <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
+                    <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
+                </div>
+            </div>
         </section>
 
         <!-- 专业技能 -->
@@ -72,7 +78,7 @@
             </div>
         </section>
 
-        <!-- 教育经历（课程无删减） -->
+        <!-- 教育经历（完整课程） -->
         <section class="education card">
             <h2 class="cn section-title">教育经历</h2>
             <h2 class="en section-title">Educational Experience</h2>
@@ -98,7 +104,6 @@
         <section class="experience card">
             <h2 class="cn section-title">实践经历</h2>
             <h2 class="en section-title">Practical Experience</h2>
-            <!-- 实习经历 -->
             <h3 class="cn">实习经历</h3>
             <h3 class="en">Internship Experience</h3>
             <div class="exp-item">
@@ -113,7 +118,6 @@
                 <p class="cn">负责刑事案件卷宗的整理、分类与归档，撰写案件审查报告，参与犯罪嫌疑人提审工作，协助检察官完成刑事案件的审查与实务处理。</p>
                 <p class="en">Responsible for sorting, classifying and filing criminal case files, writing case review reports, participating in the interrogation of criminal suspects, and assisting prosecutors in completing the review and practical handling of criminal cases.</p>
             </div>
-            <!-- 组织经历 -->
             <h3 class="cn">组织经历</h3>
             <h3 class="en">Organizational Experience</h3>
             <div class="exp-item">
@@ -136,7 +140,7 @@
             </div>
         </section>
 
-        <!-- 学术项目与竞赛 -->
+        <!-- 学术项目 -->
         <section class="academic card">
             <h2 class="cn section-title">学术项目与竞赛经历</h2>
             <h2 class="en section-title">Academic Projects & Competition Experience</h2>
@@ -156,45 +160,32 @@
                 <p class="cn">2025学年 | 完成学年论文《上证指数波动与收益关系研究——基于GARCH族模型的实证分析》</p>
                 <p class="en">2025 Academic Year | Completed Academic Year Thesis "A Study on the Relationship between the Fluctuation and Return of the Shanghai Composite Index - An Empirical Analysis Based on GARCH Model Family"</p>
             </div>
-            <div class="academic-item">
-                <p class="cn">2026学年 | 完成毕业论文《》（待补充）</p>
-                <p class="en">2026 Academic Year | Completed Graduation Thesis "" (To be supplemented)</p>
-            </div>
         </section>
 
-        <!-- 最后更新日期 -->
+        <!-- 更新日期 -->
         <section class="update-date">
-            <p><span class="cn">最后更新日期：</span><span class="en">Last Updated：</span>2026年03月20日</p>
+            <p><span class="cn">最后更新日期：2026年03月20日</span><span class="en">Last Updated：March 20, 2026</span></p>
         </section>
     </div>
 
-    <!-- 中英切换JS逻辑 -->
+    <!-- 中英切换JS -->
     <script>
-        // 获取元素
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
-
-        // 初始显示中文，隐藏英文
         enElements.forEach(el => el.style.display = 'none');
-
-        // 中文按钮点击事件
         cnBtn.addEventListener('click', () => {
             cnBtn.classList.add('active');
             enBtn.classList.remove('active');
             cnElements.forEach(el => el.style.display = 'inline');
             enElements.forEach(el => el.style.display = 'none');
-            document.documentElement.lang = 'zh-CN';
         });
-
-        // 英文按钮点击事件
         enBtn.addEventListener('click', () => {
             enBtn.classList.add('active');
             cnBtn.classList.remove('active');
             enElements.forEach(el => el.style.display = 'inline');
             cnElements.forEach(el => el.style.display = 'none');
-            document.documentElement.lang = 'en';
         });
     </script>
 </body>
