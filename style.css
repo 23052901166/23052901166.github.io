@@ -6,8 +6,9 @@
     font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
 }
 
+/* 全局平滑滚动 */
 html {
-    scroll-behavior: smooth; /* 全局平滑滚动 */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
     line-height: 1.9;
 }
 
-/* ============== 语言切换按钮 ============== */
+/* ============== 语言切换按钮样式 ============== */
 .lang-switch {
     position: fixed;
     top: 25px;
@@ -45,13 +46,13 @@ body {
     background: #FF7D00;
 }
 
-/* 按钮点击效果 */
+/* 按钮点击缩放效果 */
 .lang-switch button:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* ============== 顶部横幅 ============== */
+/* ============== 顶部横幅样式 ============== */
 .banner-bg {
     width: 100%;
     height: 300px;
@@ -78,14 +79,14 @@ body {
     font-weight: 500;
 }
 
-/* ============== 页面容器 ============== */
+/* ============== 页面容器样式 ============== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* ============== 卡片模块样式 ============== */
+/* ============== 卡片模块核心样式 ============== */
 .card {
     position: relative;
     background: white;
@@ -93,19 +94,20 @@ body {
     padding: 35px;
     margin-bottom: 30px;
     box-shadow: 0 6px 20px rgba(22, 93, 255, 0.08);
-    border-left: 6px solid #165DFF; /* 左侧基础颜色条 */
-    transition: border-left-color 0.3s ease, transform 0.2s ease;
+    /* 左侧默认蓝色边框 */
+    border-left: 6px solid #165DFF;
+    /* 边框颜色平滑过渡 */
+    transition: border-left-color 0.4s ease;
     overflow: hidden;
     cursor: pointer;
 }
 
-/* 滚动到视图时：左侧颜色条变色 + 微动效 */
+/* 滚动到视图时，左侧边框变为橙色（核心变色样式） */
 .card.active {
-    border-left-color: #FF7D00; /* 滚动后变为橙色 */
-    transform: translateY(-2px);
+    border-left-color: #FF7D00;
 }
 
-/* 卡片点击涟漪效果 */
+/* 卡片点击水波纹效果 */
 .card::after {
     content: '';
     position: absolute;
@@ -132,22 +134,22 @@ body {
     margin-bottom: 20px;
 }
 
-/* 60px 协调头像（比例不变形） */
+/* 60px 标准头像（比例不变形） */
 .info-avatar {
-    width: 60px;
-    height: 60px;
+    width: 180px;
+    height: 180px;
     border-radius: 6px;
     object-fit: cover;
     border: 2px solid #165DFF;
     transition: transform 0.2s ease;
 }
 
-/* 头像点击效果 */
+/* 头像点击缩放效果 */
 .info-avatar:active {
     transform: scale(0.9);
 }
 
-/* ============== 标题样式 ============== */
+/* ============== 标题与文本样式 ============== */
 .section-title {
     font-size: 26px;
     color: #165DFF;
@@ -164,14 +166,13 @@ h3 {
     border-left: 4px solid #FF7D00;
 }
 
-/* ============== 文本内容样式 ============== */
 p {
     font-size: 16px;
     color: #4a5568;
     margin-bottom: 8px;
 }
 
-/* ============== 列表/项目模块 ============== */
+/* ============== 列表与技能标签样式 ============== */
 .list-item {
     margin: 18px 0;
     padding: 15px;
@@ -184,7 +185,6 @@ p {
     border-left: 3px solid #FF7D00;
 }
 
-/* ============== 技能标签 ============== */
 .skill-list {
     display: flex;
     flex-wrap: wrap;
@@ -205,7 +205,6 @@ p {
 /* 技能标签点击效果 */
 .skill-item:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 8px rgba(22, 93, 255, 0.2);
 }
 
 /* ============== 中英文切换控制 ============== */
