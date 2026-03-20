@@ -4,207 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>王琪翔 - 个人主页</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* ============== 全局基础样式 ============== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f8f9ff;
-            color: #2d3748;
-            line-height: 1.9;
-        }
-
-        /* ============== 语言切换按钮 ============== */
-        .lang-switch {
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            z-index: 999;
-            display: flex;
-            gap: 10px;
-        }
-
-        .lang-switch button {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 50px;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        #cn-btn { background: #165DFF; }
-        #en-btn { background: #FF7D00; }
-
-        .lang-switch button:active {
-            transform: scale(0.95);
-        }
-
-        /* ============== 顶部横幅 ============== */
-        .banner-bg {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #165DFF, #699EFF, #FF7D00);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .banner-content {
-            text-align: center;
-            color: white;
-        }
-
-        .name-title {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .subtitle {
-            font-size: 18px;
-        }
-
-        /* ============== 页面容器 ============== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ============== 卡片模块样式 ============== */
-        .card {
-            position: relative;
-            background: white;
-            border-radius: 16px;
-            padding: 35px;
-            margin-bottom: 30px;
-            box-shadow: 0 6px 20px rgba(22, 93, 255, 0.08);
-            border-left: 6px solid #165DFF !important;
-            transition: border-left-color 0.4s ease !important;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        /* 滚动活跃状态：左侧条变橙色 */
-        .card.active {
-            border-left-color: #FF7D00 !important;
-        }
-
-        /* 卡片点击涟漪效果 */
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(22, 93, 255, 0.15);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .card:active::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        /* ============== 基本信息头部（标题+头像） ============== */
-        .basic-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        /* 60px 标准头像 */
-        .info-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 2px solid #165DFF;
-            transition: transform 0.2s ease;
-        }
-
-        .info-avatar:active {
-            transform: scale(0.9);
-        }
-
-        /* ============== 标题样式 ============== */
-        .section-title {
-            font-size: 26px;
-            color: #165DFF;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #FF7D00;
-            display: inline-block;
-        }
-
-        h3 {
-            font-size: 19px;
-            color: #2d3748;
-            margin: 25px 0 12px;
-            padding-left: 12px;
-            border-left: 4px solid #FF7D00;
-        }
-
-        p {
-            font-size: 16px;
-            color: #4a5568;
-            margin-bottom: 8px;
-        }
-
-        /* ============== 列表/技能标签 ============== */
-        .list-item {
-            margin: 18px 0;
-            padding: 15px;
-            background: #f8f9ff;
-            border-radius: 10px;
-        }
-
-        .academic-item {
-            background: linear-gradient(90deg, #fff4e6, #fff);
-            border-left: 3px solid #FF7D00;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .skill-item {
-            display: inline-block;
-            background: linear-gradient(90deg, #165DFF, #699EFF);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-
-        .skill-item:active {
-            transform: scale(0.95);
-        }
-
-        /* ============== 中英文切换 ============== */
-        .en { display: none !important; }
-    </style>
 </head>
 <body>
     <!-- 语言切换按钮 -->
@@ -224,7 +25,7 @@
     </section>
 
     <div class="container">
-        <!-- 基本信息 -->
+        <!-- 基本信息（右上角60px头像） -->
         <section class="card">
             <div class="basic-header">
                 <h2 class="cn section-title">基本信息</h2>
@@ -241,15 +42,19 @@
                 <p class="cn">身高：183cm</p>
                 <p class="en">Height: 183cm</p>
                 <p class="cn">政治面貌：中共预备党员</p>
-                <p class="en">Political Status: Probationary Member</p>
+                <p class="en">Political Status: Probationary Member of the Communist Party of China</p>
                 <p class="cn">学校/专业：华东政法大学 金融学（本科）</p>
-                <p class="en">University: East China University of Political Science and Law</p>
+                <p class="en">University/Major: East China University of Political Science and Law, Finance (Undergraduate)</p>
                 <p class="cn">学历：本科</p>
-                <p class="en">Degree: Bachelor</p>
+                <p class="en">Educational Background: Bachelor's Degree</p>
+                <p class="cn">研究/职业方向：金融与法律交叉领域、金融数据分析、法经济学</p>
+                <p class="en">Research/Career Direction: Finance & Law Interdisciplinary Field, Financial Data Analysis, Law and Economics</p>
                 <p class="cn">联系电话：13703440757</p>
-                <p class="en">Phone: 13703440757</p>
+                <p class="en">Phone Number: 13703440757</p>
                 <p class="cn">电子邮箱：wqx050309@163.com</p>
-                <p class="en">Email: wqx050309@163.com</p>
+                <p class="en">E-mail: wqx050309@163.com</p>
+                <p class="cn">居住地址：上海松江区龙源路555号</p>
+                <p class="en">Residential Address: No.555 Longyuan Road, Songjiang District, Shanghai</p>
             </div>
         </section>
 
@@ -257,116 +62,143 @@
         <section class="card">
             <h2 class="cn section-title">个人简介</h2>
             <h2 class="en section-title">Personal Profile</h2>
-            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。</p>
-            <p class="en">Undergraduate student majoring in Finance at ECUPL, with solid professional knowledge and interdisciplinary thinking.</p>
+            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
+            <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible in work, outstanding execution, rigorous logical thinking and positive work attitude, good at team cooperation. Have rich internship experience in the court and procuratorate of the political and legal system, accumulated solid legal practical operation ability, with good communication and coordination, business processing and legal document writing ability. Actively participate in disciplinary competitions and academic research, and have accumulated rich experience in the practice and research of the finance and law interdisciplinary field.</p>
         </section>
 
         <!-- 专业技能 -->
         <section class="card">
             <h2 class="cn section-title">技能证书</h2>
-            <h2 class="en section-title">Skills</h2>
+            <h2 class="en section-title">Skills & Certificates</h2>
             <div class="skill-list">
-                <p class="cn skill-item">Python、Stata金融编程</p>
-                <p class="en skill-item">Python, Stata Programming</p>
-                <p class="cn skill-item">计算机二级、Office</p>
-                <p class="en skill-item">Computer Level 2</p>
+                <p class="cn skill-item">Python、Stata、Matlab金融编程</p>
+                <p class="en skill-item">Python, Stata, Matlab Financial Programming</p>
+                <p class="cn skill-item">上海市计算机二级、Office/WPS全系列</p>
+                <p class="en skill-item">Shanghai Computer Level 2, Office/WPS Full Series</p>
+                <p class="cn skill-item">DW、Photoshop设计与应用</p>
+                <p class="en skill-item">DW, Photoshop Design and Application</p>
+                <p class="cn skill-item">大学英语四六级（熟练读写译）</p>
+                <p class="en skill-item">CET-4 & CET-6 (Fluent in Reading, Writing and Translation)</p>
+                <p class="cn skill-item">C2机动车驾驶证</p>
+                <p class="en skill-item">C2 Motor Vehicle Driving License</p>
+                <p class="cn skill-item">法律文书写作、卷宗整理实务</p>
+                <p class="en skill-item">Legal Document Writing, File Compilation Practice</p>
             </div>
         </section>
 
         <!-- 教育经历 -->
         <section class="card">
             <h2 class="cn section-title">教育经历</h2>
-            <h2 class="en section-title">Education</h2>
-            <p class="cn">2023.09-2027.07 华东政法大学 金融学 本科</p>
-            <p class="en">2023.09-2027.07 ECUPL, Finance, Bachelor</p>
+            <h2 class="en section-title">Educational Experience</h2>
+            <div class="list-item">
+                <p class="cn">2023年9月-2027年7月 | 华东政法大学 | 金融学 | 本科</p>
+                <p class="en">September 2023 - July 2027 | East China University of Political Science and Law | Finance | Bachelor's Degree</p>
+            </div>
+            <h3 class="cn">主修金融核心课程</h3>
+            <h3 class="en">Core Finance Major Courses</h3>
+            <p class="cn">高等数学一、高等数学二、线性代数、微观经济学、概率论与数理统计、金融学、宏观经济学、政治经济学、财政学、会计学、统计学、金融机构与金融市场、法经济学、Matlab金融编程、公司金融</p>
+            <p class="en">Advanced Mathematics 1, Advanced Mathematics 2, Linear Algebra, Microeconomics, Probability Theory and Mathematical Statistics, Finance, Macroeconomics, Political Economy, Public Finance, Accounting, Statistics, Financial Institutions and Financial Markets, Law and Economics, Matlab Financial Programming, Corporate Finance</p>
+            
+            <h3 class="cn">核心法学课程</h3>
+            <h3 class="en">Core Law Courses</h3>
+            <p class="cn">法理学、宪法学、民法学、刑法学、民事诉讼法学、刑事诉讼法学、经济法学、金融法学、知识产权法学、国际贸易法、国际商法、国际商事仲裁、纪检监察理论与实务、法律文书写作</p>
+            <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
         </section>
 
         <!-- 实践经历 -->
         <section class="card">
             <h2 class="cn section-title">实践经历</h2>
-            <h2 class="en section-title">Experience</h2>
+            <h2 class="en section-title">Practical Experience</h2>
+            <h3 class="cn">实习经历</h3>
+            <h3 class="en">Internship Experience</h3>
             <div class="list-item">
-                <p class="cn">2024.11-2025.01 漯河市召陵区人民法院 法官助理</p>
-                <p class="en">2024.11-2025.01 Court Intern</p>
+                <p class="cn">2024年11月-2025年1月 | 漯河市召陵区人民法院 | 法官助理实习生</p>
+                <p class="en">November 2024 - January 2025 | Zhaoling District People's Court of Luohe City | Judge Assistant Intern</p>
+                <p class="cn">负责案件信息整理、法律文件分类管理，与开庭当事人进行庭前沟通对接，协助法官完成案件梳理，并参与法院判决书等法律文书的撰写工作。</p>
+                <p class="en">Responsible for sorting out case information, classifying and managing legal documents, conducting pre-trial communication with parties in court, assisting judges in sorting out cases, and participating in the writing of legal documents such as court judgments.</p>
+            </div>
+            <div class="list-item">
+                <p class="cn">2025年8月-2025年9月 | 漯河市召陵区人民检察院 | 第一检察部 检察官助理</p>
+                <p class="en">August 2025 - September 2025 | Zhaoling District People's Procuratorate of Luohe City | Procurator Assistant, First Procuratorate Department</p>
+                <p class="cn">负责刑事案件卷宗的整理、分类与归档，撰写案件审查报告，参与犯罪嫌疑人提审工作，协助检察官完成刑事案件的审查与实务处理。</p>
+                <p class="en">Responsible for sorting, classifying and filing criminal case files, writing case review reports, participating in the interrogation of criminal suspects, and assisting prosecutors in completing the review and practical handling of criminal cases.</p>
+            </div>
+
+            <h3 class="cn">组织经历</h3>
+            <h3 class="en">Organizational Experience</h3>
+            <div class="list-item">
+                <p class="cn">2334、23012班 班委</p>
+                <p class="en">Class Committee Member, Class 2334 & 23012</p>
+                <p class="cn">参与班级重大活动的策划与组织实施，负责全班同学的学习资源收集、整理与上传下达，保障班级学习氛围建设。</p>
+                <p class="en">Participated in the planning and organization of major class activities, responsible for the collection, sorting and transmission of learning resources for all classmates, and guaranteed the construction of the class learning atmosphere.</p>
+            </div>
+            <div class="list-item">
+                <p class="cn">校组织部、学术部 部员</p>
+                <p class="en">Member, University Organization Department & Academic Department</p>
+                <p class="cn">参与全院团学活动的策划与落地，负责各部门之间的沟通协调工作，保障团学活动的顺利开展。</p>
+                <p class="en">Participated in the planning and implementation of league and student activities of the whole college, responsible for the communication and coordination between various departments, and guaranteed the smooth development of league and student activities.</p>
+            </div>
+            <div class="list-item">
+                <p class="cn">2435班 班导生</p>
+                <p class="en">Senior Tutor, Class 2435</p>
+                <p class="cn">负责新生入学的校园适应指导工作，为新生提供学业规划、校园生活等方面的答疑与帮助，协助新生快速融入大学生活。</p>
+                <p class="en">Responsible for the campus adaptation guidance of freshmen, providing answers and help for freshmen in academic planning, campus life and other aspects, and assisting freshmen to quickly integrate into university life.</p>
             </div>
         </section>
 
         <!-- 学术项目 -->
         <section class="card">
-            <h2 class="cn section-title">学术项目</h2>
-            <h2 class="en section-title">Academic Projects</h2>
+            <h2 class="cn section-title">学术项目与竞赛经历</h2>
+            <h2 class="en section-title">Academic Projects & Competition Experience</h2>
             <div class="list-item academic-item">
-                <p class="cn">《金融视角下的法价值平衡》</p>
-                <p class="en">Legal Value Balance from Financial Perspective</p>
+                <p class="cn">2024学年 | 合作完成《金融视角下的法价值平衡——以“大而不倒”为例》</p>
+                <p class="en">2024 Academic Year | Co-completed "The Balance of Legal Values from a Financial Perspective - Taking 'Too Big to Fail' as an Example"</p>
+            </div>
+            <div class="list-item academic-item">
+                <p class="cn">2024学年 | 领导完成《为中医药行业发展注入金融活水》| 校级决赛 优胜奖</p>
+                <p class="en">2024 Academic Year | Led the completion of "Injecting Financial Vitality into the Development of Traditional Chinese Medicine Industry" | Merit Award, University-level Final</p>
+            </div>
+            <div class="list-item academic-item">
+                <p class="cn">2024学年 | 领导完成《法尺量利——AI代写的法商璧合及责利同构分析》| 全国法商案例分析大赛 全国决赛</p>
+                <p class="en">2024 Academic Year | Led the completion of "Measuring Profits by Legal Rules - The Integration of Law and Business and the Isomorphism of Responsibility and Profit in AI Writing" | National Final, National Law and Business Case Analysis Competition</p>
+            </div>
+            <div class="list-item academic-item">
+                <p class="cn">2025学年 | 完成学年论文《上证指数波动与收益关系研究——基于GARCH族模型的实证分析》</p>
+                <p class="en">2025 Academic Year | Completed Academic Year Thesis "A Study on the Relationship between the Fluctuation and Return of the Shanghai Composite Index - An Empirical Analysis Based on GARCH Model Family"</p>
             </div>
         </section>
     </div>
 
+    <!-- 纯中英文切换JS -->
     <script>
-        // 1. 纯中英文切换
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
 
+        // 默认显示中文
+        showChinese();
+
+        // 中文切换
+        cnBtn.addEventListener('click', showChinese);
+        // 英文切换
+        enBtn.addEventListener('click', showEnglish);
+
+        // 纯中文
         function showChinese() {
             cnElements.forEach(el => el.style.display = 'block');
             enElements.forEach(el => el.style.display = 'none');
+            cnBtn.style.background = '#165DFF';
+            enBtn.style.background = '#FF7D00';
         }
 
+        // 纯英文
         function showEnglish() {
             enElements.forEach(el => el.style.display = 'block');
             cnElements.forEach(el => el.style.display = 'none');
+            enBtn.style.background = '#165DFF';
+            cnBtn.style.background = '#FF7D00';
         }
-
-        // 默认中文
-        showChinese();
-        cnBtn.addEventListener('click', showChinese);
-        enBtn.addEventListener('click', showEnglish);
-
-        // 2. 滚动监听 - 左侧条变色
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    } else {
-                        entry.target.classList.remove('active');
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            cards.forEach(card => observer.observe(card));
-        });
-
-        // 3. 全局水波纹点击效果
-        document.addEventListener('click', function(e) {
-            const ripple = document.createElement('div');
-            const size = Math.max(e.target.offsetWidth, e.target.offsetHeight);
-            const x = e.clientX - e.target.getBoundingClientRect().left - size / 2;
-            const y = e.clientY - e.target.getBoundingClientRect().top - size / 2;
-
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(22, 93, 255, 0.2);
-                border-radius: 50%;
-                pointer-events: none;
-                animation: ripple 0.6s ease-out forwards;
-            `;
-
-            e.target.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
-        });
-
-        // 水波纹动画
-        const style = document.createElement('style');
-        style.textContent = '@keyframes ripple {to {transform: scale(2); opacity: 0;}}';
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
