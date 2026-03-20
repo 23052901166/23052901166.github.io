@@ -1,113 +1,176 @@
+/* 全局重置 + 高级撞色配色 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Microsoft YaHei", Arial, sans-serif;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
 }
+/* 背景渐变+撞色底纹 */
 body {
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.8;
+    background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
+    color: #2d3748;
+    line-height: 1.9;
     padding: 20px;
+    min-height: 100vh;
 }
+
+/* 语言切换按钮（撞色核心） */
 .lang-switch {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     z-index: 999;
+    display: flex;
+    gap: 10px;
 }
 .lang-btn {
-    padding: 8px 16px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
-    background-color: #409eff;
-    color: #fff;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    margin-left: 10px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.lang-btn.active {
-    background-color: #2675c9;
-}
-.lang-btn:hover {
-    background-color: #66b1ff;
-}
+/* 中文按钮：深海蓝主色 */
+#cn-btn {background: #165DFF; color: white;}
+/* 英文按钮：珊瑚橙撞色 */
+#en-btn {background: #FF7D00; color: white;}
+.lang-btn.active {transform: scale(1.08); box-shadow: 0 6px 15px rgba(0,0,0,0.15);}
+
+/* 页面容器 */
 .container {
-    max-width: 1200px;
-    margin: 60px auto 20px;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-section h2 {
-    font-size: 24px;
-    color: #2675c9;
-    border-bottom: 2px solid #409eff;
-    padding-bottom: 10px;
-    margin: 30px 0 20px;
+
+/* 头像模块（居中+圆形设计） */
+.avatar-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(22, 93, 255, 0.1);
+    border: 2px solid #FF7D00; /* 撞色边框 */
 }
-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin: 20px 0 10px;
-    padding-left: 10px;
-    border-left: 3px solid #409eff;
+.avatar-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #165DFF; /* 主色边框 */
+    box-shadow: 0 8px 20px rgba(22, 93, 255, 0.2);
+    margin-bottom: 20px;
 }
-.info-content p, .profile p, .skill-item, .edu-item p, .courses p, .exp-item p, .academic-item p {
+.name-title {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #165DFF, #FF7D00); /* 渐变文字 */
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+.subtitle {
     font-size: 16px;
-    margin: 10px 0;
-}
-.time {
-    color: #666;
+    color: #718096;
     font-weight: 500;
 }
+
+/* 卡片设计（高级感核心） */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(22, 93, 255, 0.08);
+    border-left: 6px solid #165DFF; /* 主色侧边撞色 */
+    transition: all 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(22, 93, 255, 0.15);
+    border-left-color: #FF7D00; /* 悬浮换撞色 */
+}
+
+/* 模块标题（渐变+撞色） */
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #165DFF;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #FF7D00; /* 撞色下划线 */
+    display: inline-block;
+}
+
+/* 内容通用样式 */
+h3 {
+    font-size: 19px;
+    color: #2d3748;
+    margin: 20px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #FF7D00; /* 撞色竖线 */
+}
+p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #4a5568;
+}
+.time {
+    color: #165DFF;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* 技能标签（撞色气泡） */
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 12px;
+    margin-top: 15px;
 }
 .skill-item {
-    background-color: #f0f7ff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: 1px solid #e6f2ff;
+    background: linear-gradient(90deg, #165DFF, #699EFF);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba(22, 93, 255, 0.15);
 }
-.exp-item, .academic-item {
-    margin: 15px 0;
-    padding-left: 15px;
-    border-left: 2px solid #e6f2ff;
+
+/* 列表项样式 */
+.exp-item, .academic-item, .edu-item {
+    margin: 18px 0;
+    padding: 15px;
+    background: #f8f9ff;
+    border-radius: 10px;
+    border: 1px solid #e2e8ff;
 }
+.academic-item {
+    background: linear-gradient(90deg, #fff4e6, #fff); /* 撞色渐变背景 */
+    border-color: #FF7D00;
+}
+
+/* 更新日期 */
 .update-date {
+    text-align: right;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
-    color: #666;
+    border-top: 2px solid #e2e8ff;
+    color: #718096;
     font-size: 14px;
-    text-align: right;
 }
+
+/* 移动端适配 */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-        margin-top: 80px;
-    }
-    .lang-switch {
-        top: 10px;
-        right: 10px;
-    }
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-    section h2 {
-        font-size: 20px;
-    }
-    section h3 {
-        font-size: 16px;
-    }
-    .info-content p, .profile p, .skill-item, .edu-item p {
-        font-size: 14px;
-    }
+    .avatar-img {width: 140px; height: 140px;}
+    .name-title {font-size: 26px;}
+    .card {padding: 25px 20px;}
+    .section-title {font-size: 22px;}
+    .lang-switch {top: 15px; right: 15px;}
+    .lang-btn {padding: 8px 15px; font-size: 13px;}
 }
