@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+    <script>
+    // 1. 获取所有卡片元素
+    const cards = document.querySelectorAll('.card');
+    
+    // 2. 创建监听器：当元素进入/离开视口时触发
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // 进入视口 → 加上 active 类（左侧条变橙色）
+                entry.target.classList.add('active');
+            } else {
+                // 离开视口 → 移除 active 类（恢复蓝色）
+                entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.2 // 元素露出 20% 时触发
+    });
+    
+    // 3. 给每个卡片绑定监听器
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+</script>
 <body>
     <script>
     // 全局水波纹点击效果
