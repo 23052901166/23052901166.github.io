@@ -1,171 +1,114 @@
-/* ============== 全局基础样式 ============== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王琪翔 - 个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button id="cn-btn" class="active">中文</button>
+        <button id="en-btn">English</button>
+    </div>
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- 顶部横幅 -->
+    <section class="banner-bg">
+        <div>
+            <h1 class="cn name-title">王琪翔</h1>
+            <h1 class="en name-title">Qixiang Wang</h1>
+            <p class="cn subtitle">金融+法律交叉领域 | 数据分析爱好者</p>
+            <p class="en subtitle">Finance & Law Interdisciplinary | Data Enthusiast</p>
+        </div>
+    </section>
 
-body {
-    background: #f8f9ff;
-    color: #2d3748;
-    line-height: 1.9;
-}
+    <div class="container">
+        <!-- 基本信息 -->
+        <section class="card">
+            <div class="basic-header">
+                <div>
+                    <h2 class="cn section-title">基本信息</h2>
+                    <h2 class="en section-title">Basic Information</h2>
+                </div>
+                <img src="avatar.jpg" class="info-avatar" alt="头像">
+            </div>
+            <div>
+                <p class="cn">姓名：王琪翔</p>
+                <p class="en">Name: Qixiang Wang</p>
+                
+                <p class="cn">民族：汉</p>
+                <p class="en">Ethnicity: Han</p>
+                
+                <p class="cn">出生年月：2005.05.03</p>
+                <p class="en">Date of Birth: May 03, 2005</p>
+                
+                <p class="cn">身高：183cm</p>
+                <p class="en">Height: 183cm</p>
+                
+                <p class="cn">政治面貌：中共预备党员</p>
+                <p class="en">Political Status: Probationary Party Member</p>
+                
+                <p class="cn">学校/专业：华东政法大学 金融学（本科）</p>
+                <p class="en">University: East China University of Political Science and Law, Finance (Bachelor)</p>
+                
+                <p class="cn">学历：本科</p>
+                <p class="en">Degree: Bachelor</p>
+                
+                <p class="cn">研究/职业方向：金融与法律交叉领域、金融数据分析、法经济学</p>
+                <p class="en">Career: Finance & Law, Data Analysis, Law & Economics</p>
+                
+                <p class="cn">联系电话：13703440757</p>
+                <p class="en">Phone: 13703440757</p>
+                
+                <p class="cn">电子邮箱：wqx050309@163.com</p>
+                <p class="en">Email: wqx050309@163.com</p>
+            </div>
+        </section>
 
-/* ============== 语言切换按钮 ============== */
-.lang-switch {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 999;
-    display: flex;
-    gap: 8px;
-}
+        <!-- 个人简介 -->
+        <section class="card">
+            <h2 class="cn section-title">个人简介</h2>
+            <h2 class="en section-title">Personal Profile</h2>
+            <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具金融与法学跨学科思维。</p>
+            <p class="en">Undergraduate at ECUPL, majoring in Finance with interdisciplinary thinking in Finance and Law.</p>
+        </section>
 
-.lang-switch button {
-    padding: 6px 14px;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+        <!-- 教育经历 -->
+        <section class="card">
+            <h2 class="cn section-title">教育经历</h2>
+            <h2 class="en section-title">Education</h2>
+            <p class="cn">2023.09-2027.07 华东政法大学 金融学 本科</p>
+            <p class="en">2023.09-2027.07 ECUPL, Finance, Bachelor</p>
+        </section>
+    </div>
 
-#cn-btn { background: #165DFF; }
-#en-btn { background: #FF7D00; }
+    <script>
+        const cnBtn = document.getElementById('cn-btn');
+        const enBtn = document.getElementById('en-btn');
+        const cnTexts = document.querySelectorAll('.cn');
+        const enTexts = document.querySelectorAll('.en');
 
-.lang-switch button.active {
-    opacity: 1;
-}
-.lang-switch button:not(.active) {
-    opacity: 0.8;
-}
+        // 🔥 初始化：默认显示中文，隐藏英文
+        function showCN() {
+            cnTexts.forEach(el => el.style.display = 'block');
+            enTexts.forEach(el => el.style.display = 'none');
+            cnBtn.classList.add('active');
+            enBtn.classList.remove('active');
+        }
 
-/* ============== 顶部横幅 ============== */
-.banner-bg {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(90deg, #165DFF, #FF7D00);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
+        // 🔥 切换到英文：显示英文，隐藏中文
+        function showEN() {
+            enTexts.forEach(el => el.style.display = 'block');
+            cnTexts.forEach(el => el.style.display = 'none');
+            enBtn.classList.add('active');
+            cnBtn.classList.remove('active');
+        }
 
-.name-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 18px;
-    opacity: 0.9;
-}
-
-/* ============== 页面容器 ============== */
-.container {
-    max-width: 1200px;
-    margin: -60px auto 0;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
-}
-
-/* ============== 卡片模块 ============== */
-.card {
-    background: white;
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 6px solid #FF7D00;
-    transition: border-left-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.card.active {
-    border-left-color: #165DFF;
-}
-
-/* ============== 基本信息头部（标题+头像） ============== */
-.basic-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-/* 🔥 把头像从 60px 改成 80px，更大更协调 */
-.info-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 2px solid #165DFF;
-}
-
-.section-title {
-    font-size: 24px;
-    color: #165DFF;
-    padding-bottom: 8px;
-    border-bottom: 3px solid #FF7D00;
-    display: inline-block;
-}
-
-/* ============== 文本内容 ============== */
-p {
-    font-size: 16px;
-    color: #4a5568;
-    margin: 6px 0;
-}
-
-h3 {
-    font-size: 18px;
-    color: #2d3748;
-    margin: 20px 0 10px;
-    padding-left: 10px;
-    border-left: 4px solid #FF7D00;
-}
-
-/* ============== 列表/技能标签 ============== */
-.list-item {
-    margin: 15px 0;
-    padding: 12px;
-    background: #f8f9ff;
-    border-radius: 8px;
-}
-
-.academic-item {
-    background: linear-gradient(90deg, #fff4e6, #fff);
-    border-left: 3px solid #FF7D00;
-}
-
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.skill-item {
-    background: linear-gradient(90deg, #165DFF, #699EFF);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-/* ============== 中英文切换控制 ============== */
-/* 🔥 不再默认隐藏 .en，由 JS 控制显示/隐藏 */
-.cn, .en {
-    display: block;
-}
+        // 绑定按钮
+        showCN(); // 页面加载默认中文
+        cnBtn.addEventListener('click', showCN);
+        enBtn.addEventListener('click', showEN);
+    </script>
+</body>
+</html>
