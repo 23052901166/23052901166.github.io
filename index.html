@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>王琪翔 - 个人简历</title>
-    <!-- 引入图标库 -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 全局基础样式 */
@@ -14,7 +13,6 @@
             box-sizing: border-box;
             font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
         }
-        /* 平滑滚动 */
         html {
             scroll-behavior: smooth;
         }
@@ -81,7 +79,7 @@
             padding: 0 20px;
         }
 
-        /* 卡片核心样式（滚动变色关键） */
+        /* 卡片核心样式 */
         .card {
             position: relative;
             background: white;
@@ -89,16 +87,14 @@
             padding: 35px;
             margin-bottom: 30px;
             box-shadow: 0 6px 20px rgba(22, 93, 255, 0.08);
-            border-left: 6px solid #165DFF; /* 默认左侧蓝条 */
-            transition: border-left-color 0.4s ease; /* 平滑变色 */
+            border-left: 6px solid #165DFF;
+            transition: border-left-color 0.4s ease;
             overflow: hidden;
             cursor: pointer;
         }
-        /* 滚动到视图：左侧条变橙色 */
         .card.active {
             border-left-color: #FF7D00;
         }
-        /* 卡片点击涟漪效果 */
         .card::after {
             content: '';
             position: absolute;
@@ -116,24 +112,23 @@
             height: 300px;
         }
 
-        /* 基本信息头部（标题+头像） */
+        /* 基本信息头部 + 150px大头像 */
         .basic-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
-        /* 60px 标准头像（比例不变形） */
         .info-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 6px;
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
             object-fit: cover;
-            border: 2px solid #165DFF;
+            border: 3px solid #165DFF;
             transition: transform 0.2s ease;
         }
         .info-avatar:active {
-            transform: scale(0.9);
+            transform: scale(0.95);
         }
 
         /* 标题样式 */
@@ -186,21 +181,16 @@
         .skill-item:active {
             transform: scale(0.95);
         }
-
-        /* 中英文切换控制 */
-        .en {
-            display: none !important;
-        }
     </style>
 </head>
 <body>
-    <!-- 语言切换按钮 -->
+    <!-- 语言切换 -->
     <div class="lang-switch">
         <button id="cn-btn">中文</button>
         <button id="en-btn">English</button>
     </div>
 
-    <!-- 顶部渐变横幅 -->
+    <!-- 顶部横幅 -->
     <section class="banner-bg">
         <div class="banner-content">
             <h1 class="cn name-title">王琪翔</h1>
@@ -211,11 +201,13 @@
     </section>
 
     <div class="container">
-        <!-- 基本信息模块 -->
+        <!-- 基本信息 -->
         <section class="card">
             <div class="basic-header">
-                <h2 class="cn section-title">基本信息</h2>
-                <h2 class="en section-title">Basic Information</h2>
+                <div>
+                    <h2 class="cn section-title">基本信息</h2>
+                    <h2 class="en section-title">Basic Information</h2>
+                </div>
                 <img src="avatar.jpg" class="info-avatar" alt="个人照片">
             </div>
             <div class="info-content">
@@ -244,7 +236,7 @@
             </div>
         </section>
 
-        <!-- 个人简介模块 -->
+        <!-- 个人简介 -->
         <section class="card">
             <h2 class="cn section-title">个人简介</h2>
             <h2 class="en section-title">Personal Profile</h2>
@@ -252,7 +244,7 @@
             <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible work attitude, good at teamwork. With rich internship experience in courts and procuratorates, I have accumulated solid legal practice ability and participated in academic research in the interdisciplinary field of finance and law.</p>
         </section>
 
-        <!-- 专业技能模块 -->
+        <!-- 专业技能 -->
         <section class="card">
             <h2 class="cn section-title">技能证书</h2>
             <h2 class="en section-title">Skills & Certificates</h2>
@@ -272,7 +264,7 @@
             </div>
         </section>
 
-        <!-- 教育经历模块 -->
+        <!-- 教育经历 -->
         <section class="card">
             <h2 class="cn section-title">教育经历</h2>
             <h2 class="en section-title">Educational Experience</h2>
@@ -291,7 +283,7 @@
             <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
         </section>
 
-        <!-- 实践经历模块 -->
+        <!-- 实践经历 -->
         <section class="card">
             <h2 class="cn section-title">实践经历</h2>
             <h2 class="en section-title">Practical Experience</h2>
@@ -332,7 +324,7 @@
             </div>
         </section>
 
-        <!-- 学术项目模块 -->
+        <!-- 学术项目 -->
         <section class="card">
             <h2 class="cn section-title">学术项目与竞赛经历</h2>
             <h2 class="en section-title">Academic Projects & Competition Experience</h2>
@@ -345,8 +337,8 @@
                 <p class="en">2024 Academic Year | Led the completion of "Injecting Financial Vitality into the Development of Traditional Chinese Medicine Industry" | Merit Award, University-level Final</p>
             </div>
             <div class="list-item academic-item">
-                <p class="cn">2025学年 | 领导完成《法尺量利——AI代写的法商璧合及责利同构分析》| 全国法商案例分析大赛 全国决赛</p>
-                <p class="en">2025 Academic Year | Led the completion of "Measuring Profits by Legal Rules - The Integration of Law and Business in AI Writing and the Analysis of Responsibility and Profit Isomorphism" | National Final, National Law and Business Case Analysis Competition</p>
+                <p class="cn">2024学年 | 领导完成《法尺量利——AI代写的法商璧合及责利同构分析》| 全国法商案例分析大赛 全国决赛</p>
+                <p class="en">2024 Academic Year | Led the completion of "Measuring Profits by Legal Rules - The Integration of Law and Business in AI Writing and the Analysis of Responsibility and Profit Isomorphism" | National Final, National Law and Business Case Analysis Competition</p>
             </div>
             <div class="list-item academic-item">
                 <p class="cn">2025学年 | 完成学年论文《上证指数波动与收益关系研究——基于GARCH族模型的实证分析》</p>
@@ -356,57 +348,45 @@
     </div>
 
     <script>
-        // 1. 纯中英文切换功能
+        // 1. 中英文完美切换
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
 
-        // 显示中文（隐藏英文）
         function showChinese() {
             cnElements.forEach(el => el.style.display = 'block');
             enElements.forEach(el => el.style.display = 'none');
         }
-        // 显示英文（隐藏中文）
         function showEnglish() {
             enElements.forEach(el => el.style.display = 'block');
             cnElements.forEach(el => el.style.display = 'none');
         }
 
-        // 默认加载中文
+        // 初始化
         showChinese();
         cnBtn.addEventListener('click', showChinese);
         enBtn.addEventListener('click', showEnglish);
 
-        // 2. 滚动监听 - 卡片左侧条变色（核心功能）
+        // 2. 滚动左侧条变色
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
-            // 创建滚动监视器
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active'); // 变色
-                    } else {
-                        entry.target.classList.remove('active'); // 恢复
-                    }
+                    entry.isIntersecting ? entry.target.classList.add('active') : entry.target.classList.remove('active');
                 });
-            }, { threshold: 0.3 }); // 露出30%触发
-
-            // 给所有卡片绑定监视器
+            }, { threshold: 0.3 });
             cards.forEach(card => observer.observe(card));
         });
 
         // 3. 全局水波纹点击效果
         document.addEventListener('click', function(e) {
-            // 排除按钮默认涟漪
             if (e.target.tagName === 'BUTTON') return;
-            
             const ripple = document.createElement('div');
             const size = Math.max(e.target.offsetWidth || 0, e.target.offsetHeight || 0, 100);
             const x = e.clientX - (e.target.getBoundingClientRect().left || 0) - size / 2;
             const y = e.clientY - (e.target.getBoundingClientRect().top || 0) - size / 2;
 
-            // 设置水波纹样式
             ripple.style.cssText = `
                 position: absolute;
                 width: ${size}px;
@@ -419,13 +399,10 @@
                 animation: ripple 0.6s ease-out forwards;
                 z-index: 99;
             `;
-
             e.target.appendChild(ripple);
-            // 600ms后移除水波纹
             setTimeout(() => ripple.remove(), 600);
         });
 
-        // 添加水波纹动画
         const rippleStyle = document.createElement('style');
         rippleStyle.textContent = '@keyframes ripple {to {transform: scale(2); opacity: 0;}}';
         document.head.appendChild(rippleStyle);
