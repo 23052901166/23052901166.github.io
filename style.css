@@ -89,8 +89,8 @@ body {
 
 /* 60px 完美比例头像 */
 .info-avatar {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 6px;
     object-fit: cover; /* 保证图片不变形 */
     border: 2px solid #165DFF;
