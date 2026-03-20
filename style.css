@@ -91,12 +91,13 @@ body {
 }
 /* 基本信息右上角：100px 小矩形头像（缩小版） */
 .info-avatar {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 8px;
     object-fit: cover;
-    border: 3px solid #165DFF;
-    box-shadow: 0 4px 10px rgba(22, 93, 255, 0.15);
+    border: 2px solid #165DFF; /* 边框也同步缩小一点更好看 */
+    box-shadow: 0 3px 8px rgba(22, 93, 255, 0.15);
+    flex-shrink: 0;
 }
 
 /* 模块标题 */
