@@ -6,50 +6,96 @@
     <title>王琪翔 - 个人简历</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- 引入美观字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 🔥 左侧固定导航栏（点击跳转） -->
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="cn sidebar-name">王琪翔</h1>
-            <h1 class="en sidebar-name">Qixiang Wang</h1>
-            <p class="cn sidebar-school">华东政法大学</p>
-            <p class="en sidebar-school">ECUPL</p>
+    <!-- 🔥 右侧可收起导航栏（配色与原页面完全融合） -->
+    <nav class="sidebar" id="sidebar">
+        <!-- 收起/展开按钮 -->
+        <button class="toggle-btn" id="toggleBtn">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+        <div class="sidebar-top">
+            <h1 class="cn side-name">王琪翔</h1>
+            <h1 class="en side-name">Qixiang Wang</h1>
+            <p class="cn side-desc">金融+法律交叉领域</p>
+            <p class="en side-desc">Finance & Law</p>
         </div>
-        <ul class="sidebar-menu">
-            <li><a href="#basic" class="cn"><i class="fa-solid fa-user"></i> 个人简介</a><a href="#basic" class="en"><i class="fa-solid fa-user"></i> Profile</a></li>
-            <li><a href="#skills" class="cn"><i class="fa-solid fa-wrench"></i> 技能专长</a><a href="#skills" class="en"><i class="fa-solid fa-wrench"></i> Skills</a></li>
-            <li><a href="#practice" class="cn"><i class="fa-solid fa-thumbtack"></i> 实践经历</a><a href="#practice" class="en"><i class="fa-solid fa-thumbtack"></i> Experience</a></li>
-            <li><a href="#education" class="cn"><i class="fa-solid fa-graduation-cap"></i> 教育背景</a><a href="#education" class="en"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-            <li><a href="#awards" class="cn"><i class="fa-solid fa-medal"></i> 荣誉奖项</a><a href="#awards" class="en"><i class="fa-solid fa-medal"></i> Awards</a></li>
-            <li><a href="#volunteer" class="cn"><i class="fa-solid fa-handshake"></i> 志愿服务</a><a href="#volunteer" class="en"><i class="fa-solid fa-handshake"></i> Volunteer</a></li>
-            <li><a href="#position" class="cn"><i class="fa-solid fa-clipboard"></i> 学生职务</a><a href="#position" class="en"><i class="fa-solid fa-clipboard"></i> Position</a></li>
-            <li><a href="#contact" class="cn"><i class="fa-solid fa-envelope"></i> 联系我</a><a href="#contact" class="en"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <ul class="nav-list">
+            <li><a href="#basic-info" class="cn"><i class="fa-solid fa-id-card"></i> 基本信息</a><a href="#basic-info" class="en"><i class="fa-solid fa-id-card"></i> Basic Info</a></li>
+            <li><a href="#profile" class="cn"><i class="fa-solid fa-user"></i> 个人简介</a><a href="#profile" class="en"><i class="fa-solid fa-user"></i> Profile</a></li>
+            <li><a href="#skills" class="cn"><i class="fa-solid fa-certificate"></i> 技能证书</a><a href="#skills" class="en"><i class="fa-solid fa-certificate"></i> Skills</a></li>
+            <li><a href="#education" class="cn"><i class="fa-solid fa-graduation-cap"></i> 教育经历</a><a href="#education" class="en"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#practice" class="cn"><i class="fa-solid fa-briefcase"></i> 实践经历</a><a href="#practice" class="en"><i class="fa-solid fa-briefcase"></i> Practice</a></li>
+            <li><a href="#academic" class="cn"><i class="fa-solid fa-trophy"></i> 学术竞赛</a><a href="#academic" class="en"><i class="fa-solid fa-trophy"></i> Academic</a></li>
         </ul>
     </nav>
 
-    <!-- 主内容区 -->
-    <div class="main-content">
-        <!-- 语言切换按钮 -->
+    <!-- 主内容区（原有内容100%保留） -->
+    <main class="main">
+        <!-- 语言切换 -->
         <div class="lang-switch">
             <button id="cn-btn">中文</button>
             <button id="en-btn">English</button>
         </div>
 
+        <!-- 顶部横幅 -->
+        <section class="banner-bg">
+            <div class="banner-content">
+                <h1 class="cn name-title">王琪翔</h1>
+                <h1 class="en name-title">Qixiang Wang</h1>
+                <p class="cn subtitle">金融+法律交叉领域 | 数据分析爱好者</p>
+                <p class="en subtitle">Finance & Law Interdisciplinary Field | Data Analysis Enthusiast</p>
+            </div>
+        </section>
+
         <div class="container">
-            <!-- 🔥 个人简介（对应#basic） -->
-            <section id="basic" class="card">
+            <!-- 基本信息 -->
+            <section id="basic-info" class="card">
+                <div class="basic-header">
+                    <div>
+                        <h2 class="cn section-title">基本信息</h2>
+                        <h2 class="en section-title">Basic Information</h2>
+                    </div>
+                    <img src="avatar.jpg" class="info-avatar" alt="个人照片">
+                </div>
+                <div class="info-content">
+                    <p class="cn">姓名：王琪翔</p>
+                    <p class="en">Name: Qixiang Wang</p>
+                    <p class="cn">民族：汉</p>
+                    <p class="en">Ethnicity: Han</p>
+                    <p class="cn">出生年月：2005.05.03</p>
+                    <p class="en">Date of Birth: May 03, 2005</p>
+                    <p class="cn">身高：183cm</p>
+                    <p class="en">Height: 183cm</p>
+                    <p class="cn">政治面貌：中共预备党员</p>
+                    <p class="en">Political Status: Probationary Member of the Communist Party of China</p>
+                    <p class="cn">学校/专业：华东政法大学 金融学（本科）</p>
+                    <p class="en">University/Major: East China University of Political Science and Law, Finance (Undergraduate)</p>
+                    <p class="cn">学历：本科</p>
+                    <p class="en">Educational Background: Bachelor's Degree</p>
+                    <p class="cn">研究/职业方向：金融与法律交叉领域、金融数据分析、法经济学</p>
+                    <p class="en">Research/Career Direction: Finance & Law Interdisciplinary Field, Financial Data Analysis, Law and Economics</p>
+                    <p class="cn">联系电话：13703440757</p>
+                    <p class="en">Phone Number: 13703440757</p>
+                    <p class="cn">电子邮箱：wqx050309@163.com</p>
+                    <p class="en">E-mail: wqx050309@163.com</p>
+                    <p class="cn">居住地址：上海松江区龙源路555号</p>
+                    <p class="en">Residential Address: No.555 Longyuan Road, Songjiang District, Shanghai</p>
+                </div>
+            </section>
+
+            <!-- 个人简介 -->
+            <section id="profile" class="card">
                 <h2 class="cn section-title">个人简介</h2>
                 <h2 class="en section-title">Personal Profile</h2>
                 <p class="cn">华东政法大学金融学本科在读，专业知识扎实，兼具系统的金融专业理论与法学专业知识，拥有突出的跨学科思维，能够熟练运用经济分析工具解决法律实务问题。学习能力强，做事认真负责且执行力突出，具备严谨的逻辑思维与积极的工作态度，善于团队协作。拥有丰富的政法系统法院、检察院实习经历，积累了扎实的法律实务操作能力，具备良好的沟通协调、业务处理与法律文书写作能力，积极参与学科竞赛与学术研究，在金融与法律交叉领域的实践和研究中积累了丰富经验。</p>
                 <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible work attitude, good at teamwork. With rich internship experience in courts and procuratorates, I have accumulated solid legal practice ability and participated in academic research in the interdisciplinary field of finance and law.</p>
             </section>
 
-            <!-- 🔥 技能专长（对应#skills） -->
+            <!-- 专业技能 -->
             <section id="skills" class="card">
                 <h2 class="cn section-title">技能证书</h2>
                 <h2 class="en section-title">Skills & Certificates</h2>
@@ -69,7 +115,26 @@
                 </div>
             </section>
 
-            <!-- 🔥 实践经历（对应#practice） -->
+            <!-- 教育经历 -->
+            <section id="education" class="card">
+                <h2 class="cn section-title">教育经历</h2>
+                <h2 class="en section-title">Educational Experience</h2>
+                <div class="list-item">
+                    <p class="cn">2023年9月-2027年7月 | 华东政法大学 | 金融学 | 本科</p>
+                    <p class="en">September 2023 - July 2027 | East China University of Political Science and Law | Finance | Bachelor's Degree</p>
+                </div>
+                <h3 class="cn">主修金融核心课程</h3>
+                <h3 class="en">Core Finance Major Courses</h3>
+                <p class="cn">高等数学一、高等数学二、线性代数、微观经济学、概率论与数理统计、金融学、宏观经济学、政治经济学、财政学、会计学、统计学、金融机构与金融市场、法经济学、Matlab金融编程、公司金融</p>
+                <p class="en">Advanced Mathematics 1, Advanced Mathematics 2, Linear Algebra, Microeconomics, Probability Theory and Mathematical Statistics, Finance, Macroeconomics, Political Economy, Public Finance, Accounting, Statistics, Financial Institutions and Financial Markets, Law and Economics, Matlab Financial Programming, Corporate Finance</p>
+                
+                <h3 class="cn">核心法学课程</h3>
+                <h3 class="en">Core Law Courses</h3>
+                <p class="cn">法理学、宪法学、民法学、刑法学、民事诉讼法学、刑事诉讼法学、经济法学、金融法学、知识产权法学、国际贸易法、国际商法、国际商事仲裁、纪检监察理论与实务、法律文书写作</p>
+                <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
+            </section>
+
+            <!-- 实践经历 -->
             <section id="practice" class="card">
                 <h2 class="cn section-title">实践经历</h2>
                 <h2 class="en section-title">Practical Experience</h2>
@@ -110,27 +175,8 @@
                 </div>
             </section>
 
-            <!-- 🔥 教育背景（对应#education） -->
-            <section id="education" class="card">
-                <h2 class="cn section-title">教育经历</h2>
-                <h2 class="en section-title">Educational Experience</h2>
-                <div class="list-item">
-                    <p class="cn">2023年9月-2027年7月 | 华东政法大学 | 金融学 | 本科</p>
-                    <p class="en">September 2023 - July 2027 | East China University of Political Science and Law | Finance | Bachelor's Degree</p>
-                </div>
-                <h3 class="cn">主修金融核心课程</h3>
-                <h3 class="en">Core Finance Major Courses</h3>
-                <p class="cn">高等数学一、高等数学二、线性代数、微观经济学、概率论与数理统计、金融学、宏观经济学、政治经济学、财政学、会计学、统计学、金融机构与金融市场、法经济学、Matlab金融编程、公司金融</p>
-                <p class="en">Advanced Mathematics 1, Advanced Mathematics 2, Linear Algebra, Microeconomics, Probability Theory and Mathematical Statistics, Finance, Macroeconomics, Political Economy, Public Finance, Accounting, Statistics, Financial Institutions and Financial Markets, Law and Economics, Matlab Financial Programming, Corporate Finance</p>
-                
-                <h3 class="cn">核心法学课程</h3>
-                <h3 class="en">Core Law Courses</h3>
-                <p class="cn">法理学、宪法学、民法学、刑法学、民事诉讼法学、刑事诉讼法学、经济法学、金融法学、知识产权法学、国际贸易法、国际商法、国际商事仲裁、纪检监察理论与实务、法律文书写作</p>
-                <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
-            </section>
-
-            <!-- 🔥 荣誉奖项（对应#awards） -->
-            <section id="awards" class="card">
+            <!-- 学术项目 -->
+            <section id="academic" class="card">
                 <h2 class="cn section-title">学术项目与竞赛经历</h2>
                 <h2 class="en section-title">Academic Projects & Competition Experience</h2>
                 <div class="list-item academic-item">
@@ -150,41 +196,6 @@
                     <p class="en">2025 Academic Year | Completed Academic Year Thesis "A Study on the Relationship between the Fluctuation and Return of the Shanghai Composite Index - An Empirical Analysis Based on GARCH Model Family"</p>
                 </div>
             </section>
-
-            <!-- 🔥 志愿服务（对应#volunteer） -->
-            <section id="volunteer" class="card">
-                <h2 class="cn section-title">志愿服务</h2>
-                <h2 class="en section-title">Volunteer Service</h2>
-                <p class="cn">（可在此补充你的志愿服务经历）</p>
-                <p class="en">(You can add your volunteer experience here)</p>
-            </section>
-
-            <!-- 🔥 学生职务（对应#position） -->
-            <section id="position" class="card">
-                <h2 class="cn section-title">学生职务</h2>
-                <h2 class="en section-title">Student Position</h2>
-                <p class="cn">（可在此补充你的学生干部经历）</p>
-                <p class="en">(You can add your student leadership experience here)</p>
-            </section>
-
-            <!-- 🔥 联系我（对应#contact） -->
-            <section id="contact" class="card">
-                <h2 class="cn section-title">基本信息</h2>
-                <h2 class="en section-title">Basic Information</h2>
-                <div class="basic-header">
-                    <div>
-                        <p class="cn">姓名：王琪翔</p>
-                        <p class="en">Name: Qixiang Wang</p>
-                        <p class="cn">联系电话：13703440757</p>
-                        <p class="en">Phone Number: 13703440757</p>
-                        <p class="cn">电子邮箱：wqx050309@163.com</p>
-                        <p class="en">E-mail: wqx050309@163.com</p>
-                        <p class="cn">居住地址：上海松江区龙源路555号</p>
-                        <p class="en">Residential Address: No.555 Longyuan Road, Songjiang District, Shanghai</p>
-                    </div>
-                    <img src="avatar.jpg" class="info-avatar" alt="个人照片">
-                </div>
-            </section>
         </div>
 
         <!-- 底部更新日期 -->
@@ -192,7 +203,7 @@
             <span class="cn">最后更新于：2026年03月22日</span>
             <span class="en">Last updated: March 22, 2026</span>
         </div>
-    </div>
+    </main>
 
     <script>
         // 1. 中英文切换
@@ -200,54 +211,40 @@
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
         const enElements = document.querySelectorAll('.en');
+        function showChinese() { cnElements.forEach(el => el.style.display = 'block'); enElements.forEach(el => el.style.display = 'none'); }
+        function showEnglish() { enElements.forEach(el => el.style.display = 'block'); cnElements.forEach(el => el.style.display = 'none'); }
+        showChinese(); cnBtn.addEventListener('click', showChinese); enBtn.addEventListener('click', showEnglish);
 
-        function showChinese() {
-            cnElements.forEach(el => el.style.display = 'block');
-            enElements.forEach(el => el.style.display = 'none');
-        }
-        function showEnglish() {
-            enElements.forEach(el => el.style.display = 'block');
-            cnElements.forEach(el => el.style.display = 'none');
-        }
-        showChinese();
-        cnBtn.addEventListener('click', showChinese);
-        enBtn.addEventListener('click', showEnglish);
+        // 2. 🔥 右侧导航收起/展开
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            // 切换图标
+            const icon = toggleBtn.querySelector('i');
+            icon.classList.toggle('fa-angle-right');
+            icon.classList.toggle('fa-angle-left');
+        });
 
-        // 2. 滚动时卡片左侧条变色
+        // 3. 滚动卡片变色
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    entry.isIntersecting ? entry.target.classList.add('active') : entry.target.classList.remove('active');
-                });
+                entries.forEach(entry => entry.isIntersecting ? entry.target.classList.add('active') : entry.target.classList.remove('active'));
             }, { threshold: 0.3 });
             cards.forEach(card => observer.observe(card));
         });
 
-        // 3. 全局水波纹点击效果
+        // 4. 水波纹效果
         document.addEventListener('click', function(e) {
             if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
             const ripple = document.createElement('div');
             const size = Math.max(e.target.offsetWidth || 0, e.target.offsetHeight || 0, 100);
-            const x = e.clientX - (e.target.getBoundingClientRect().left || 0) - size / 2;
-            const y = e.clientY - (e.target.getBoundingClientRect().top || 0) - size / 2;
-
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(22, 93, 255, 0.2);
-                border-radius: 50%;
-                pointer-events: none;
-                animation: ripple 0.6s ease-out forwards;
-                z-index: 99;
-            `;
-            e.target.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
+            const x = e.clientX - (e.target.getBoundingClientRect().left || 0) - size/2;
+            const y = e.clientY - (e.target.getBoundingClientRect().top || 0) - size/2;
+            ripple.style.cssText = `position:absolute;width:${size}px;height:${size}px;left:${x}px;top:${y}px;background:rgba(22,93,255,0.2);border-radius:50%;pointer-events:none;animation:ripple 0.6s ease-out forwards;z-index:99;`;
+            e.target.appendChild(ripple); setTimeout(() => ripple.remove(), 600);
         });
-
         const rippleStyle = document.createElement('style');
         rippleStyle.textContent = '@keyframes ripple {to {transform: scale(2); opacity: 0;}}';
         document.head.appendChild(rippleStyle);
