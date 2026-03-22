@@ -11,9 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 🔥 右侧可收起导航栏（配色与原页面完全融合） -->
+    <!-- 右侧可收起导航栏 -->
     <nav class="sidebar" id="sidebar">
-        <!-- 收起/展开按钮 -->
         <button class="toggle-btn" id="toggleBtn">
             <i class="fa-solid fa-angle-right"></i>
         </button>
@@ -33,15 +32,13 @@
         </ul>
     </nav>
 
-    <!-- 主内容区（原有内容100%保留） -->
+    <!-- 主内容区 -->
     <main class="main">
-        <!-- 语言切换 -->
         <div class="lang-switch">
             <button id="cn-btn">中文</button>
             <button id="en-btn">English</button>
         </div>
 
-        <!-- 顶部横幅 -->
         <section class="banner-bg">
             <div class="banner-content">
                 <h1 class="cn name-title">王琪翔</h1>
@@ -52,7 +49,6 @@
         </section>
 
         <div class="container">
-            <!-- 基本信息 -->
             <section id="basic-info" class="card">
                 <div class="basic-header">
                     <div>
@@ -87,7 +83,6 @@
                 </div>
             </section>
 
-            <!-- 个人简介 -->
             <section id="profile" class="card">
                 <h2 class="cn section-title">个人简介</h2>
                 <h2 class="en section-title">Personal Profile</h2>
@@ -95,7 +90,6 @@
                 <p class="en">Undergraduate student majoring in Finance at East China University of Political Science and Law, with solid professional knowledge, systematic financial theoretical knowledge and legal professional knowledge. Possess outstanding interdisciplinary thinking and can skillfully use economic analysis tools to solve legal practical problems. Strong learning ability, serious and responsible work attitude, good at teamwork. With rich internship experience in courts and procuratorates, I have accumulated solid legal practice ability and participated in academic research in the interdisciplinary field of finance and law.</p>
             </section>
 
-            <!-- 专业技能 -->
             <section id="skills" class="card">
                 <h2 class="cn section-title">技能证书</h2>
                 <h2 class="en section-title">Skills & Certificates</h2>
@@ -115,7 +109,6 @@
                 </div>
             </section>
 
-            <!-- 教育经历 -->
             <section id="education" class="card">
                 <h2 class="cn section-title">教育经历</h2>
                 <h2 class="en section-title">Educational Experience</h2>
@@ -134,7 +127,6 @@
                 <p class="en">Jurisprudence, Constitutional Law, Civil Law, Criminal Law, Civil Procedure Law, Criminal Procedure Law, Economic Law, Financial Law, Intellectual Property Law, International Trade Law, International Commercial Law, International Commercial Arbitration, Theory and Practice of Discipline Inspection and Supervision, Legal Document Writing</p>
             </section>
 
-            <!-- 实践经历 -->
             <section id="practice" class="card">
                 <h2 class="cn section-title">实践经历</h2>
                 <h2 class="en section-title">Practical Experience</h2>
@@ -175,7 +167,6 @@
                 </div>
             </section>
 
-            <!-- 学术项目 -->
             <section id="academic" class="card">
                 <h2 class="cn section-title">学术项目与竞赛经历</h2>
                 <h2 class="en section-title">Academic Projects & Competition Experience</h2>
@@ -198,7 +189,6 @@
             </section>
         </div>
 
-        <!-- 底部更新日期 -->
         <div class="footer-date">
             <span class="cn">最后更新于：2026年03月22日</span>
             <span class="en">Last updated: March 22, 2026</span>
@@ -206,7 +196,7 @@
     </main>
 
     <script>
-        // 1. 中英文切换
+        // 中英文切换
         const cnBtn = document.getElementById('cn-btn');
         const enBtn = document.getElementById('en-btn');
         const cnElements = document.querySelectorAll('.cn');
@@ -215,18 +205,17 @@
         function showEnglish() { enElements.forEach(el => el.style.display = 'block'); cnElements.forEach(el => el.style.display = 'none'); }
         showChinese(); cnBtn.addEventListener('click', showChinese); enBtn.addEventListener('click', showEnglish);
 
-        // 2. 🔥 右侧导航收起/展开
+        // 导航收起/展开
         const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.getElementById('toggleBtn');
         toggleBtn.addEventListener('click', function() {
             sidebar.classList.toggle('collapsed');
-            // 切换图标
             const icon = toggleBtn.querySelector('i');
             icon.classList.toggle('fa-angle-right');
             icon.classList.toggle('fa-angle-left');
         });
 
-        // 3. 滚动卡片变色
+        // 滚动卡片变色
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
             const observer = new IntersectionObserver((entries) => {
@@ -235,7 +224,7 @@
             cards.forEach(card => observer.observe(card));
         });
 
-        // 4. 水波纹效果
+        // 水波纹效果
         document.addEventListener('click', function(e) {
             if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') return;
             const ripple = document.createElement('div');
