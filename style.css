@@ -1,15 +1,14 @@
-/* ============== 全局布局 ============== */
+/* 全局基础样式 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    background: #f8f9ff; /* 原有页面背景色 */
+    background: #f8f9ff;
     color: #2d3748; 
     line-height: 1.9; 
-    display: flex;
-    flex-direction: row-reverse; /* 主内容左，导航右 */
+    position: relative;
 }
 
-/* ============== 字体分层（保留原有优化） ============== */
+/* 字体分层 */
 .name-title, .section-title, .side-name {
     font-family: "Noto Serif SC", serif !important;
     font-weight: 700;
@@ -27,31 +26,29 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
     font-weight: 500;
 }
 
-/* ============== 🔥 右侧可收起导航栏（配色与原页面完全融合） ============== */
+/* 右侧可收起导航栏 */
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0; /* 移到右侧 */
+    right: 0;
     width: 260px;
     height: 100vh;
-    /* 融合配色：白色背景+主色边框，和页面无割裂 */
     background: #ffffff;
     border-left: 3px solid #165DFF;
     box-shadow: -2px 0 10px rgba(22, 93, 255, 0.05);
     padding: 40px 20px;
     overflow-y: auto;
     z-index: 999;
-    transition: all 0.3s ease; /* 收起动画 */
+    transition: all 0.3s ease;
 }
-/* 🔥 导航收起状态 */
 .sidebar.collapsed {
-    width: 70px; /* 收起后仅留图标 */
+    width: 70px;
     padding: 40px 10px;
 }
 .sidebar.collapsed .side-name,
 .sidebar.collapsed .side-desc,
 .sidebar.collapsed .nav-list a span {
-    display: none; /* 收起后隐藏文字 */
+    display: none;
 }
 
 /* 收起/展开按钮 */
@@ -85,11 +82,11 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
 .side-name {
     font-size: 28px;
     margin-bottom: 8px;
-    color: #165DFF; /* 主色，融合页面 */
+    color: #165DFF;
 }
 .side-desc {
     font-size: 14px;
-    color: #699EFF; /* 浅蓝，融合渐变 */
+    color: #699EFF;
 }
 
 /* 导航菜单 */
@@ -103,7 +100,7 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #165DFF; /* 主色，融合页面 */
+    color: #165DFF;
     text-decoration: none;
     font-size: 17px;
     padding: 12px;
@@ -115,29 +112,26 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
     text-align: center;
     font-size: 18px;
 }
-/* 导航hover效果（原有辅色） */
 .nav-list a:hover {
     background: rgba(255, 125, 0, 0.1);
     color: #FF7D00;
     transform: translateX(-5px);
 }
 
-/* ============== 主内容区（适配右侧导航） ============== */
+/* 主内容区 */
 .main {
-    flex: 1;
-    margin-right: 260px; /* 适配导航宽度 */
+    margin-right: 260px;
     transition: all 0.3s ease;
 }
-/* 主内容随导航收起自适应 */
 .sidebar.collapsed ~ .main {
     margin-right: 70px;
 }
 
-/* ============== 语言切换（保留原有样式） ============== */
+/* 语言切换按钮 */
 .lang-switch {
     position: fixed;
     top: 20px;
-    right: 280px; /* 避开导航 */
+    right: 280px;
     z-index: 999;
     display: flex;
     gap: 10px;
@@ -160,7 +154,7 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
 #en-btn { background: #FF7D00; }
 .lang-switch button:active { transform: scale(0.95); }
 
-/* ============== 顶部横幅（原有样式100%保留） ============== */
+/* 顶部横幅 */
 .banner-bg {
     width: 100%;
     height: 300px;
@@ -183,14 +177,14 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
     font-weight: 500;
 }
 
-/* ============== 页面容器（原有样式100%保留） ============== */
+/* 页面容器 */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* ============== 卡片样式（原有样式100%保留） ============== */
+/* 卡片样式 */
 .card {
     position: relative;
     background: white;
@@ -223,7 +217,7 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
     height: 300px;
 }
 
-/* ============== 基本信息头部（原有样式100%保留） ============== */
+/* 基本信息头部 */
 .basic-header {
     display: flex;
     justify-content: space-between;
@@ -240,7 +234,7 @@ p, .nav-list a, .lang-switch button, .subtitle, .side-desc {
 }
 .info-avatar:active { transform: scale(0.95); }
 
-/* ============== 标题样式（原有样式100%保留） ============== */
+/* 标题样式 */
 .section-title {
     font-size: 26px;
     color: #165DFF;
@@ -261,7 +255,7 @@ p {
     margin-bottom: 8px;
 }
 
-/* ============== 列表/技能标签（原有样式100%保留） ============== */
+/* 列表/技能标签 */
 .list-item {
     margin: 18px 0;
     padding: 15px;
@@ -289,7 +283,7 @@ p {
 }
 .skill-item:active { transform: scale(0.95); }
 
-/* ============== 底部日期（原有样式100%保留） ============== */
+/* 底部日期 */
 .footer-date {
     text-align: center;
     font-size: 14px;
@@ -299,5 +293,5 @@ p {
     border-top: 1px solid #e8ebf5;
 }
 
-/* ============== 中英文切换（原有样式100%保留） ============== */
+/* 中英文切换 */
 .en { display: none; }
