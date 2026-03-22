@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
 }
 
 html {
@@ -14,6 +13,88 @@ body {
     background: #f8f9ff;
     color: #2d3748;
     line-height: 1.9;
+    display: flex;
+}
+
+/* ============== 🔥 字体分层 ============== */
+/* 一级标题（姓名、大模块标题）：衬线书法体 */
+.sidebar-name, .section-title {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 700;
+}
+/* 二级标题（子模块标题）：无衬线粗体 */
+h3 {
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 700;
+}
+/* 正文内容：无衬线常规体 */
+p, .sidebar-menu a, .lang-switch button {
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 400;
+}
+/* 技能标签：无衬线中等体 */
+.skill-item {
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 500;
+}
+
+/* ============== 🔥 左侧固定导航栏 ============== */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: #1a1a1a;
+    color: #d4af37; /* 金色 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #d4af37;
+}
+.sidebar-name {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.sidebar-school {
+    font-size: 20px;
+    opacity: 0.9;
+}
+.sidebar-menu {
+    list-style: none;
+}
+.sidebar-menu li {
+    margin: 20px 0;
+}
+.sidebar-menu a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.sidebar-menu a:hover {
+    background: rgba(212, 175, 55, 0.2);
+    transform: translateX(5px);
+}
+.sidebar-menu i {
+    width: 24px;
+    text-align: center;
+}
+
+/* ============== 主内容区 ============== */
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 0 20px;
 }
 
 /* ============== 语言切换按钮 ============== */
@@ -25,7 +106,6 @@ body {
     display: flex;
     gap: 8px;
 }
-
 .lang-switch button {
     padding: 6px 14px;
     border: none;
@@ -36,47 +116,16 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
 }
-
 #cn-btn { background: #165DFF; }
 #en-btn { background: #FF7D00; }
-
-.lang-switch button.active {
-    opacity: 1;
-}
-.lang-switch button:not(.active) {
-    opacity: 0.8;
-}
-
-/* ============== 顶部横幅 ============== */
-.banner-bg {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(90deg, #165DFF, #FF7D00);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.name-title {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 18px;
-    opacity: 0.9;
+.lang-switch button:active {
+    transform: scale(0.95);
 }
 
 /* ============== 页面容器 ============== */
 .container {
     max-width: 1200px;
-    margin: -60px auto 0;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
+    margin: 30px auto 0;
 }
 
 /* ============== 卡片模块 ============== */
@@ -91,9 +140,24 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .card.active {
     border-left-color: #165DFF;
+}
+.card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(22, 93, 255, 0.15);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+.card:active::after {
+    width: 300px;
+    height: 300px;
 }
 
 /* ============== 基本信息头部（标题+头像） ============== */
@@ -103,69 +167,80 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
-
-/* 🔥 把头像从 60px 改成 80px，更大更协调 */
 .info-avatar {
     width: 150px;
     height: 150px;
-    border-radius: 8px;
+    border-radius: 12px;
     object-fit: cover;
-    border: 2px solid #165DFF;
+    border: 3px solid #165DFF;
+    transition: transform 0.2s ease;
+}
+.info-avatar:active {
+    transform: scale(0.95);
 }
 
+/* ============== 标题样式 ============== */
 .section-title {
-    font-size: 24px;
+    font-size: 26px;
     color: #165DFF;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
     border-bottom: 3px solid #FF7D00;
     display: inline-block;
+    margin-bottom: 20px;
 }
-
-/* ============== 文本内容 ============== */
+h3 {
+    font-size: 19px;
+    color: #2d3748;
+    margin: 25px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #FF7D00;
+}
 p {
     font-size: 16px;
     color: #4a5568;
-    margin: 6px 0;
-}
-
-h3 {
-    font-size: 18px;
-    color: #2d3748;
-    margin: 20px 0 10px;
-    padding-left: 10px;
-    border-left: 4px solid #FF7D00;
+    margin-bottom: 8px;
 }
 
 /* ============== 列表/技能标签 ============== */
 .list-item {
-    margin: 15px 0;
-    padding: 12px;
+    margin: 18px 0;
+    padding: 15px;
     background: #f8f9ff;
-    border-radius: 8px;
+    border-radius: 10px;
 }
-
 .academic-item {
     background: linear-gradient(90deg, #fff4e6, #fff);
     border-left: 3px solid #FF7D00;
 }
-
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     margin-top: 10px;
 }
-
 .skill-item {
     background: linear-gradient(90deg, #165DFF, #699EFF);
     color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+.skill-item:active {
+    transform: scale(0.95);
+}
+
+/* ============== 底部更新日期 ============== */
+.footer-date {
+    text-align: center;
+    font-size: 14px;
+    color: #8a91a2;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e8ebf5;
 }
 
 /* ============== 中英文切换控制 ============== */
-/* 🔥 不再默认隐藏 .en，由 JS 控制显示/隐藏 */
-.cn, .en {
-    display: block;
+.en {
+    display: none;
 }
